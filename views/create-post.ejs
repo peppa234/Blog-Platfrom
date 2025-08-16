@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head.ejs') %>
+<body>
+    <%- include('includes/header.ejs') %> 
+    <main>
+        <h1>Create a New Blog Post</h1>
+        <p>Share your thoughts and ideas with the world.</p>
+        
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+            <ul class="error-messages">
+            <% errors.forEach(function(error) { %>
+                <li><%= error %></li>
+            <% }); %>
+            </ul>
+        <% } %>
+        
+        <form action="/create-post" method="POST">
+            <fieldset>
+                <legend>Post Details</legend>
+                <label for="title"><small>Title:</small></label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="body"><small>Content:</small></label>
+                <textarea id="body" name="body" required placeholder="Write your post content here..."></textarea>
+                <br>
+
+                <button type="submit">Create Post</button>
+            </fieldset>
+        </form>
+    </main>
+    <%- include('includes/footer.ejs') %>
+</body>
+</html>

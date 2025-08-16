@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head.ejs') %>
+<body>
+    <%- include('includes/header.ejs') %> 
+    <main>
+        <h1>Edit Blog Post</h1>
+        <p>Update your post content and title.</p>
+
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+            <ul class="error-messages">
+            <% errors.forEach(function(error) { %>
+                <li><%= error %></li>
+            <% }); %>
+            </ul>
+        <% } %>
+
+        <form action="/edit-post/<%= post.id %>" method="POST">
+            <fieldset>
+                <legend>Edit Post Details</legend>
+                <label for="title"><small>Title:</small></label>
+                <input type="text" id="title" name="title" value="<%= post.title %>" required>
+
+                <label for="body"><small>Content:</small></label>
+                <textarea id="body" name="body" required><%= post.body %></textarea>
+                <br>
+
+                <button type="submit">Update Post</button>
+                <a href="/post/<%= post.id %>" class="button">Cancel</a>
+            </fieldset>
+        </form>
+    </main>
+    <%- include('includes/footer.ejs') %>
+</body>
+</html>

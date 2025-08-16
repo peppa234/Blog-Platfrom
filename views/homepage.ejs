@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head.ejs') %>
+<body>
+    <%- include('includes/header.ejs') %> 
+    <main>
+        <h1>Welcome to Our Blog Platform</h1>
+        <p>Create an account to start sharing your thoughts and ideas with the world.</p>
+        
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+            <ul class="error-messages">
+            <% errors.forEach(function(error) { %>
+                <li><%= error %></li>
+            <% }); %>
+            </ul>
+        <% } %>
+        
+        <form action="/signup" method="POST">
+            <fieldset>
+                <legend>Create an Account</legend>
+                <label for="username"><small>Username:</small></label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password"><small>Password:</small></label>
+                <input type="password" id="password" name="password" required>
+                <br>
+
+                <button type="submit">Sign Up</button>
+            </fieldset>
+        </form>
+
+        <p>Already have an account? <a href="/login">Log in here</a></p>
+    </main>
+    <%- include('includes/footer.ejs') %>
+</body>
+</html>
