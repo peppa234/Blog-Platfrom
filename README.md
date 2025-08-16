@@ -71,15 +71,7 @@ A modern blog platform built with Node.js, Express, and SQLite. Create, manage, 
 
 ## 🔧 Configuration
 
-### Environment Variables
 
-Create a `.env` file in the root directory:
-
-```env
-JWTSECRET=your-super-secret-jwt-key-here
-NODE_ENV=development
-PORT=3000
-```
 
 ### Database
 
@@ -143,13 +135,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This application is designed for educational and development purposes. Always test thoroughly before using in production environments.
 
-## 🆘 Support
 
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/issues) page
-2. Create a new issue with detailed information
-3. Include your Node.js version and operating system
 
 ---
 
