@@ -2,7 +2,7 @@
 
 A modern, elegant blog platform built with Node.js, Express.js, and SQLite. Features a beautiful dark theme with glassmorphism effects, responsive design, and comprehensive content management capabilities.
 
-![[./public/image.png]]
+![](public/image.png)
 
 ## 🌟 Overview
 
