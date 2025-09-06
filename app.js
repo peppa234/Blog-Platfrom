@@ -108,6 +108,23 @@ app.get('/login', (req, res) => {
     res.render("login");
 });
 
+// Route: Blog page - shows all posts from all users
+app.get('/blog', (req, res) => {
+    const postsQuery = db.prepare(`
+        SELECT posts.*, users.username 
+        FROM posts 
+        INNER JOIN users ON posts.user_id = users.id 
+        ORDER BY posts.createdDate DESC
+    `);
+    const allPosts = postsQuery.all();
+    res.render("blog", { posts: allPosts });
+});
+
+// Route: About page
+app.get('/about', (req, res) => {
+    res.render("about");
+});
+
 // Authentication middleware - ensures user is logged in
 function requireAuthentication(req, res, next) {
     if (req.user) {

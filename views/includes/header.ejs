@@ -1,14 +1,16 @@
 <header>
-    <h1><a href="/">🌟 Blog Platform ✨</a></h1>
+    <h1><a href="/">Blog Platform</a></h1>
     
-    <% if (user) { %>
-        <nav class="user-navigation">
-            <a href="/create-post" class="nav-link">📝 Create Post</a>
-            <a href="/logout" class="nav-link">🚪 Log Out</a>
-        </nav>
-    <% } else { %>
-        <nav class="guest-navigation">
-            <a href="/login" class="nav-link">🔑 Log In</a>
-        </nav>
-    <% } %>
+    <nav>
+        <a href="/" class="nav-link">Home</a>
+        <a href="/blog" class="nav-link">Blog</a>
+        <a href="/about" class="nav-link">About</a>
+        
+        <% if (user) { %>
+            <a href="/create-post" class="nav-link create-button">Create Post</a>
+            <a href="/logout" class="nav-link">Log Out</a>
+        <% } else { %>
+            <a href="/login" class="nav-link">Log In</a>
+        <% } %>
+    </nav>
 </header>

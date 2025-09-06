@@ -5,23 +5,23 @@
     <%- include('includes/header.ejs') %>
     <main class="fade-in">
         <div class="text-center">
-            <h1>Welcome back, <%= user.username %>!</h1>
-            <p>Manage your blog posts and share your thoughts with the world.</p>
+            <h1>Blog Posts</h1>
+            <p>Discover amazing content from our community of writers.</p>
         </div>
         
         <% if (posts.length) { %>
-            <h2>Your Blog Posts</h2>
             <div class="posts-grid">
                 <% posts.forEach(post => { %>
                     <article class="post-card">
                         <a href="/post/<%= post.id %>" class="post-title"><%= post.title %></a>
-                        <span class="post-date"><%= new Date(post.createdDate).toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'long', 
-                            day: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                        }) %></span>
+                        <div class="post-meta" style="margin: 0.5rem 0; padding: 0; border: none; font-size: 0.9rem;">
+                            <span class="author">By <%= post.username %></span>
+                            <span class="date">• <%= new Date(post.createdDate).toLocaleDateString('en-US', { 
+                                year: 'numeric', 
+                                month: 'short', 
+                                day: 'numeric'
+                            }) %></span>
+                        </div>
                         <div class="post-excerpt">
                             <% 
                                 // First render the markdown to HTML
@@ -40,13 +40,16 @@
                                 <%- renderedContent %>
                             <% } %>
                         </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="/post/<%= post.id %>" class="button" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem;">Read More</a>
+                        </div>
                     </article>
                 <% }) %>
             </div>
         <% } else { %>
             <div class="text-center">
                 <h2>No posts yet</h2>
-                <p>You don't have any posts yet. <a href="/create-post" class="create-button" style="display: inline-block; margin-top: 1rem;">Create your first post</a> to get started!</p>
+                <p>Be the first to share your thoughts! <a href="/login">Log in</a> to create a post.</p>
             </div>
         <% } %>
     </main>

@@ -3,9 +3,11 @@
 <%- include('includes/head.ejs') %>
 <body>
     <%- include('includes/header.ejs') %> 
-    <main>
-        <h1>Welcome to Our Blog Platform</h1>
-        <p>Create an account to start sharing your thoughts and ideas with the world.</p>
+    <main class="fade-in">
+        <div class="text-center">
+            <h1>Welcome to Our Blog Platform</h1>
+            <p>Create an account to start sharing your thoughts and ideas with the world. Join our community of writers and readers.</p>
+        </div>
         
         <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
             <ul class="error-messages">
@@ -18,18 +20,21 @@
         <form action="/signup" method="POST">
             <fieldset>
                 <legend>Create an Account</legend>
-                <label for="username"><small>Username:</small></label>
-                <input type="text" id="username" name="username" required>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
 
-                <label for="password"><small>Password:</small></label>
-                <input type="password" id="password" name="password" required>
-                <br>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
 
-                <button type="submit">Sign Up</button>
+                <div class="form-buttons">
+                    <button type="submit" class="create-button">Sign Up</button>
+                </div>
             </fieldset>
         </form>
 
-        <p>Already have an account? <a href="/login">Log in here</a></p>
+        <div class="text-center">
+            <p>Already have an account? <a href="/login">Log in here</a></p>
+        </div>
     </main>
     <%- include('includes/footer.ejs') %>
 </body>

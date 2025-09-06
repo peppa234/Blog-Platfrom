@@ -3,9 +3,11 @@
 <%- include('includes/head.ejs') %>
 <body>
     <%- include('includes/header.ejs') %> 
-    <main>
-        <h1>Log In to Your Account</h1>
-        <p>Enter your credentials to access your blog dashboard.</p>
+    <main class="fade-in">
+        <div class="text-center">
+            <h1>Log In to Your Account</h1>
+            <p>Enter your credentials to access your blog dashboard and start writing.</p>
+        </div>
         
         <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
             <ul class="error-messages">
@@ -18,18 +20,21 @@
         <form action="/login" method="POST">
             <fieldset>
                 <legend>Login Credentials</legend>
-                <label for="username"><small>Username:</small></label>
-                <input type="text" id="username" name="username" required>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
 
-                <label for="password"><small>Password:</small></label>
-                <input type="password" id="password" name="password" required>
-                <br>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
 
-                <button type="submit">Log In</button>
+                <div class="form-buttons">
+                    <button type="submit">Log In</button>
+                </div>
             </fieldset>
         </form>
 
-        <p>Don't have an account? <a href="/">Sign up here</a></p>
+        <div class="text-center">
+            <p>Don't have an account? <a href="/">Sign up here</a></p>
+        </div>
     </main>
     <%- include('includes/footer.ejs') %>
 </body>

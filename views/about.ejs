@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head.ejs') %>
+<body>
+    <%- include('includes/header.ejs') %>
+    <main class="fade-in">
+        <div class="text-center">
+            <h1>About Our Blog Platform</h1>
+            <p>Discover the story behind our modern blogging experience.</p>
+        </div>
+        
+        <div class="blog-post">
+            <h2>Welcome to Our Blog Platform</h2>
+            <p>This is a modern, elegant blog platform designed to help writers and readers connect through the power of storytelling. Built with cutting-edge web technologies and a beautiful dark theme, our platform provides an exceptional writing and reading experience.</p>
+            
+            <h3>Features</h3>
+            <ul>
+                <li><strong>Modern Design:</strong> Beautiful dark theme with glassmorphism effects and smooth animations</li>
+                <li><strong>Markdown Support:</strong> Write your posts using Markdown for rich text formatting</li>
+                <li><strong>Responsive Layout:</strong> Optimized for desktop, tablet, and mobile devices</li>
+                <li><strong>User Authentication:</strong> Secure login and registration system</li>
+                <li><strong>Post Management:</strong> Create, edit, and delete your blog posts easily</li>
+                <li><strong>Public Blog:</strong> Discover posts from all users in our community</li>
+                <li><strong>Personal Dashboard:</strong> Manage your own posts in a dedicated space</li>
+            </ul>
+            
+            <h3>Technology Stack</h3>
+            <p>Our platform is built with modern web technologies to ensure performance, security, and scalability:</p>
+            <ul>
+                <li><strong>Backend:</strong> Node.js with Express.js framework</li>
+                <li><strong>Database:</strong> SQLite for reliable data storage</li>
+                <li><strong>Frontend:</strong> EJS templating with modern CSS</li>
+                <li><strong>Security:</strong> JWT authentication, rate limiting, and input sanitization</li>
+                <li><strong>Styling:</strong> Custom CSS with CSS Grid, Flexbox, and modern design principles</li>
+            </ul>
+            
+            <h3>Get Started</h3>
+            <p>Ready to start your blogging journey? <a href="/">Create an account</a> or <a href="/login">log in</a> to begin sharing your thoughts with the world. Explore our <a href="/blog">community blog</a> to discover amazing content from other writers.</p>
+            
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="/" class="button create-button">Get Started</a>
+                <a href="/blog" class="button">Explore Blog</a>
+            </div>
+        </div>
+    </main>
+
+    <%- include('includes/footer.ejs') %>
+</body>
+</html>
